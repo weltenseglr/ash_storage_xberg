@@ -77,6 +77,7 @@ defmodule AshStorageXberg.MixProject do
   defp extras do
     [
       {"README.md", title: "README"},
+      {"guides/sidecar.md", title: "The xberg sidecar"},
       {"CHANGELOG.md", title: "Changelog"},
       {"LICENSE", title: "License"}
     ]
@@ -84,7 +85,7 @@ defmodule AshStorageXberg.MixProject do
 
   defp groups_for_extras do
     [
-      Guides: ~w(README.md),
+      Guides: ~w(README.md guides/sidecar.md),
       Reference: ~w(CHANGELOG.md LICENSE)
     ]
   end

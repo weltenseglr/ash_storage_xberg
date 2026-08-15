@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.40.3">
+    <meta name="project" content="AshStorageXberg v0.1.0">
+
+      <meta name="author" content="AshStorageXberg contributors">
+
+
+    <title>AshStorageXberg.Variants.PageThumbnail — AshStorageXberg v0.1.0</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
+
+    <script defer src="dist/sidebar_items-0C9D49E2.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-Y2MUTVIN.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+AshStorageXberg
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras="Pages"></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of AshStorageXberg</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">AshStorageXberg.<wbr />Variants.<wbr />PageThumbnail</span> 
+      <small class="app-vsn" translate="no">(AshStorageXberg v0.1.0)</small>
+
+    </h1>
+
+<a href="AshStorageXberg.Variants.PageThumbnail.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
+  <i class="ri-markdown-line" aria-hidden="true"></i>
+  <span class="sr-only">Copy Markdown</span>
+</a>
+
+
+
+      <a href="https://github.com/weltenseglr/ash_storage_xberg/blob/main/lib/ash_storage_xberg/variants/page_thumbnail.ex#L1" title="View Source" class="icon-action" rel="help nofollow">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p><a href="https://hexdocs.pm/ash_storage/0.1.0/AshStorage.Variant.html"><code class="inline">AshStorage.Variant</code></a> that renders a page of a document to an image, using the
+xberg sidecar's page rasterization.</p><pre><code class="makeup elixir" translate="no"><span class="n">variant</span><span class="w"> </span><span class="ss">:thumbnail</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4656614952-1">{</span><span class="nc">AshStorageXberg.Variants.PageThumbnail</span><span class="p">,</span><span class="w"> </span><span class="ss">dpi</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="ss">format</span><span class="p">:</span><span class="w"> </span><span class="ss">:webp</span><span class="p" data-group-id="4656614952-1">}</span></code></pre><h2 id="module-options" class="section-heading"><a href="#module-options" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Options</span></h2><ul><li><code class="inline">:page</code> — 1-based page to render (default <code class="inline">1</code>)</li><li><code class="inline">:format</code> — <code class="inline">:png</code> (default), <code class="inline">:webp</code>, <code class="inline">:jpeg</code>, <code class="inline">:heif</code> or <code class="inline">:native</code>;
+sent as the sidecar's <code class="inline">images.output_format</code></li><li><code class="inline">:dpi</code> — requested rasterization DPI (default <code class="inline">72</code>, sent as
+<code class="inline">images.target_dpi</code>)</li><li><code class="inline">:max_dimension</code> — cap on the longest edge (sent as
+<code class="inline">images.max_image_dimension</code>)</li></ul><p>Returns <code class="inline">{:ok, %{content_type: ..., width: ..., height: ..., page: ...}}</code>.</p><h2 id="module-sidecar-behaviour-verified-against-xberg-1-0-14-re-checked-on-1-1-0" class="section-heading"><a href="#module-sidecar-behaviour-verified-against-xberg-1-0-14-re-checked-on-1-1-0" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Sidecar behaviour (verified against xberg 1.0.14, re-checked on 1.1.0)</span></h2><p>Page rasters are produced by the sidecar's page-rendering pass, which only
+runs when OCR is forced, so the request always sets <code class="inline">force_ocr: true</code>
+alongside <code class="inline">images.include_page_rasters: true</code> — <code class="inline">include_page_rasters</code> on its
+own returns no images. Rendering is therefore not free: prefer
+<code class="inline">generate: :oban</code> for large documents.</p><p><code class="inline">:dpi</code>/<code class="inline">:max_dimension</code> are forwarded but still advisory: both 1.0.14 and
+1.1.0 render PDF pages at the fixed OCR DPI of 150 regardless (requesting 72
+and 300 for the same A4 page both return 1241×1754). Always trust the
+<code class="inline">width</code>/<code class="inline">height</code> in the returned metadata rather than computing them from
+<code class="inline">:dpi</code>.</p><p>The document side of <code class="inline">accept?/1</code> is the curated list of rasterizable types
+<em>intersected with the sidecar's own <code class="inline">GET /formats</code> list</em>
+(<a href="AshStorageXberg.Formats.html"><code class="inline">AshStorageXberg.Formats</code></a>), so a build that cannot extract a format never
+gets asked to rasterize it — on both 1.0.14 and 1.1.0 that drops ODF Graphics
+(<code class="inline">.odg</code>), which the sidecar does not report as extractable. The entry is kept
+in the curated list on purpose: the intersection lets a build that <em>does</em>
+support it start working with no code change. Accepted
+Office/ODF types are rasterizable in principle, but builds without an office
+renderer still return no raster, in which case <code class="inline">transform/3</code> fails with
+<code class="inline">{:error, {:no_page_raster, message}}</code>.</p><p><code class="inline">image/*</code> is accepted without that intersection: the sidecar returns the
+embedded image itself rather than a page raster, and it handles image types
+beyond the ones it lists as extractable documents.</p>
+    </section>
+
+</div>
+
+
+    <footer class="footer">
+
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/ash_storage_xberg/0.1.0">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/ash_storage_xberg/0.1.0">Hex Preview</a>
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="llms.txt" target="_blank">
+                View llms.txt
+              </a>
+
+
+              <a href="AshStorageXberg.epub">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.40.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

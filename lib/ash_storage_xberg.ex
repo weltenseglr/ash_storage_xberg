@@ -142,7 +142,9 @@ defmodule AshStorageXberg do
       `version/0` and `cache_warm/1`
     * `AshStorageXberg.Formats` — the cached `GET /formats` list behind `accept?/1`
 
-  See the [README](readme.html) for installation, the sidecar compose snippet,
-  the presigned-URL flow, and the limitations of the current sidecar image.
+  See the [README](readme.html) for installation and usage, and
+  [The xberg sidecar](sidecar.html) for image variants, the runtime format
+  allowlist, the presigned-URL flow, and the limitations of the current
+  sidecar images.
   """
 end

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.40.3">
+    <meta name="project" content="AshStorageXberg v0.1.0">
+
+      <meta name="author" content="AshStorageXberg contributors">
+
+
+    <title>The xberg sidecar — AshStorageXberg v0.1.0</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
+
+    <script defer src="dist/sidebar_items-0C9D49E2.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-Y2MUTVIN.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+AshStorageXberg
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras="Pages"></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-extra" id="main" data-type="extras">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of AshStorageXberg</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>The xberg sidecar</h1>
+
+<a href="sidecar.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
+  <i class="ri-markdown-line" aria-hidden="true"></i>
+  <span class="sr-only">Copy Markdown</span>
+</a>
+
+
+      <a href="https://github.com/weltenseglr/ash_storage_xberg/blob/main/guides/sidecar.md#L1" title="View Source" class="icon-action" rel="help nofollow">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+<p>Everything operational about the sidecar that goes beyond the README's quick start: choosing an
+image, the runtime format allowlist, the presigned-URL flow, and the limitations of the current
+images.</p><h2 id="choosing-an-image" class="section-heading"><a href="#choosing-an-image" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Choosing an image</span></h2><p>The stock <code class="inline">ghcr.io/xberg-io/xberg:latest</code> image covers text extraction, OCR, and document
+metadata. <code class="inline">.devcontainer/docker-compose.yml</code> in this repository — the development environment for
+the library itself — is the same setup with one deliberate difference: it runs
+<code class="inline">ghcr.io/weltenseglr/xberg:omni</code>, an &quot;omni&quot; build that bundles the optional media (audio/video)
+and office-rasterization support the stock image leaves out. Use that image too if you need
+<a href="AshStorageXberg.Analyzers.Audio.html"><code class="inline">AshStorageXberg.Analyzers.Audio</code></a>, <a href="AshStorageXberg.Variants.Transcript.html"><code class="inline">AshStorageXberg.Variants.Transcript</code></a>, or Office/ODF
+thumbnails.</p><p>Pin an image tag (e.g. <code class="inline">ghcr.io/xberg-io/xberg:1.0.14</code>) rather than tracking <code class="inline">:latest</code> if API
+drift ever bites; <a href="AshStorageXberg.XbergApi.html#version/0"><code class="inline">AshStorageXberg.XbergApi.version/0</code></a> reports what the sidecar is running, and
+<a href="AshStorageXberg.XbergApi.html#health/0"><code class="inline">AshStorageXberg.XbergApi.health/0</code></a> is a ready-made health probe.
+<a href="AshStorageXberg.XbergApi.html#cache_warm/1"><code class="inline">AshStorageXberg.XbergApi.cache_warm/1</code></a> pre-downloads OCR/Whisper models at deploy time so the
+first upload does not pay for it.</p><h2 id="the-format-allowlist-is-the-sidecar-s-not-ours" class="section-heading"><a href="#the-format-allowlist-is-the-sidecar-s-not-ours" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">The format allowlist is the sidecar's, not ours</span></h2><p>Nothing hardcodes &quot;what xberg can read&quot;. <a href="AshStorageXberg.Formats.html"><code class="inline">AshStorageXberg.Formats</code></a> fetches <code class="inline">GET /formats</code> on the
+first <code class="inline">accept?/1</code> call, caches it in <code class="inline">:persistent_term</code> for the life of the node, and logs what it
+found:</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="8532413587-1">[</span><span class="n">info</span><span class="p" data-group-id="8532413587-1">]</span><span class="w">  </span><span class="ss">AshStorageXberg</span><span class="p">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">xberg</span><span class="w"> </span><span class="n">sidecar</span><span class="w"> </span><span class="n">reports</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="n">extractable</span><span class="w"> </span><span class="nc">MIME</span><span class="w"> </span><span class="n">types</span><span class="w">
+</span><span class="p" data-group-id="8532413587-2">[</span><span class="n">debug</span><span class="p" data-group-id="8532413587-2">]</span><span class="w"> </span><span class="ss">AshStorageXberg</span><span class="p">:</span><span class="w"> </span><span class="n">extractable</span><span class="w"> </span><span class="nc">MIME</span><span class="w"> </span><span class="ss">types</span><span class="p">:</span><span class="w"> </span><span class="n">application</span><span class="o">/</span><span class="n">epub</span><span class="o">+</span><span class="n">zip</span><span class="p">,</span><span class="w"> </span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="err">…</span></code></pre><p>Set the Logger to <code class="inline">:debug</code> to see the full list — it is the quickest way to find out whether a
+given build handles a format. If the sidecar is unreachable when the first lookup happens, a
+conservative built-in list is used instead and the fallback is logged as a warning, so <code class="inline">accept?/1</code>
+never raises during an attach flow. The fallback lands in <code class="inline">:persistent_term</code> exactly like a real
+response, though — a sidecar that was merely down during the first lookup pins the conservative
+list for the rest of the node's life. If you see that warning, call
+<a href="AshStorageXberg.Formats.html#reset/0"><code class="inline">AshStorageXberg.Formats.reset/0</code></a> once the sidecar is back; the same call drops the cache after
+pointing at a different sidecar.</p><p><code class="inline">GET /formats</code> reports MIME type and extension only — there are no capability flags — so it can
+answer &quot;can this build extract it?&quot; but not &quot;can it rasterize / transcribe it?&quot;. Modules that need
+a <em>subset</em> (documents, rasterizable pages) therefore keep a curated list and intersect it with the
+runtime one; the prefix matchers (<code class="inline">image/*</code>, <code class="inline">audio/*</code>, <code class="inline">video/*</code> in <code class="inline">Analyzers.Image</code>,
+<code class="inline">Analyzers.Audio</code> and <code class="inline">Variants.Transcript</code>) deliberately do not intersect, because the endpoint
+under-reports aliases xberg itself emits, such as <code class="inline">audio/x-wav</code> for RIFF WAVE files.</p><h2 id="presigned-url-flow" class="section-heading"><a href="#presigned-url-flow" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Presigned-URL flow</span></h2><p>Every analyzed byte normally travels app → sidecar as multipart. For blobs living in object
+storage there is a shortcut: <code class="inline">POST /extract</code> also accepts a JSON body
+<code class="inline">{&quot;inputs&quot;: [{&quot;uri&quot;: …}], &quot;config&quot;: {…}}</code>, and the sidecar fetches each URI itself.</p><p><a href="AshStorageXberg.XbergApi.html"><code class="inline">AshStorageXberg.XbergApi</code></a> routes inputs automatically:</p><table><thead><tr><th style="text-align: left;">Input</th><th style="text-align: left;">Transport</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">%{bytes: binary}</code></td><td style="text-align: left;">multipart upload</td></tr><tr><td style="text-align: left;"><code class="inline">%{uri: &quot;/local/path&quot;}</code> (or <code class="inline">file://…</code>)</td><td style="text-align: left;">streamed from disk as multipart</td></tr><tr><td style="text-align: left;"><code class="inline">%{uri: &quot;https://bucket…?X-Amz-Signature=…&quot;}</code></td><td style="text-align: left;">JSON body — <strong>the sidecar downloads straight from the bucket; the bytes never enter the BEAM</strong></td></tr></tbody></table><pre><code class="makeup elixir" translate="no"><span class="nc">AshStorageXberg.Xberg</span><span class="o">.</span><span class="n">extract</span><span class="p" data-group-id="2080954560-1">(</span><span class="ss">input</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2080954560-2">%{</span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="n">presigned_s3_url</span><span class="p" data-group-id="2080954560-2">}</span><span class="p" data-group-id="2080954560-1">)</span></code></pre><p>Two things to know before wiring presigned URLs into an analyzer:</p><ul><li><strong>Encryption caveat.</strong> If blobs are encrypted at rest (by ash_storage or by your app), a presigned
+URL serves <em>ciphertext</em> that the sidecar cannot parse. Those attachments must fall back to
+streaming the decrypted bytes through the app as multipart.</li><li><strong>SSRF policy.</strong> The sidecar refuses to fetch private and link-local addresses by default, which
+is what you want — it stops the fetcher from being used as an SSRF pivot. Public bucket endpoints
+pass. For a MinIO-style private endpoint in development, override it per request with
+<code class="inline">config: %{url: %{crawl: %{ssrf: %{deny_private: false}}}}</code>.</li></ul><p>A batch must be all-remote or all-local: <code class="inline">extract_batch/1</code> returns a validation error when the two
+are mixed, because they use different transports.</p><h2 id="current-sidecar-image-limitations" class="section-heading"><a href="#current-sidecar-image-limitations" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Current sidecar image limitations</span></h2><p>Originally verified against <code class="inline">ghcr.io/xberg-io/xberg:latest</code> = <strong>1.0.14</strong> on 2026-08-11, and
+re-checked on 2026-08-15 against <code class="inline">ghcr.io/weltenseglr/xberg:omni</code> (reports <strong>1.1.0</strong>), the image
+this repo's devcontainer and CI actually run. Everything below still holds, except that the
+<code class="inline">:omni</code> build <em>does</em> have media support — that is what makes the <code class="inline">:transcript</code> tests runnable:</p><ul><li><strong>No audio/media support in the shipped build.</strong> <code class="inline">tone.wav</code> comes back as <code class="inline">unsupported_format</code>
+and the extraction config schema rejects a <code class="inline">transcription</code> section outright, even though wav,
+mp3, and mp4 appear in <code class="inline">GET /formats</code>. <code class="inline">Analyzers.Audio</code> and <code class="inline">Variants.Transcript</code> are
+implemented against the documented shapes and tolerate the naming differences between builds;
+they light up as soon as a media-enabled image is available. Until then they surface a normal
+<code class="inline">{:error, {:unsupported_format, _}}</code>, which is retryable under <code class="inline">analyze:</code>/<code class="inline">generate: :oban</code>.</li><li><strong>Page rasters require forced OCR.</strong> <code class="inline">images.include_page_rasters: true</code> on its own returns
+nothing; rasters are a by-product of the page-rendering pass that only runs under
+<code class="inline">force_ocr: true</code>. <code class="inline">Variants.PageThumbnail</code> therefore always sets <code class="inline">force_ocr: true</code> — which is
+why thumbnails cost a real OCR pass and why <code class="inline">generate: :oban</code> is the right default for big files.</li><li><strong>DPI is advisory.</strong> <code class="inline">target_dpi</code> and <code class="inline">max_image_dimension</code> are accepted but ignored; PDF pages
+render at the fixed OCR DPI of 150 (requesting 72 and 300 for the same A4 page both return
+1241×1754). Trust the <code class="inline">width</code>/<code class="inline">height</code> in the returned variant metadata
+rather than computing them from <code class="inline">:dpi</code>.</li><li><strong>Office rasterization depends on the build.</strong> <code class="inline">PageThumbnail.accept?/1</code> intersects its curated
+list of rasterizable document types with the sidecar's <code class="inline">GET /formats</code>, so formats the build
+cannot extract at all are rejected up front (on both 1.0.14 and 1.1.0 that is ODF Graphics,
+<code class="inline">.odg</code>; the entry stays in the curated list so a build that gains support needs no code change).
+What survives is still only rasterizable <em>in principle</em>: builds without an office renderer
+return no raster and <code class="inline">transform/3</code> fails with <code class="inline">{:error, {:no_page_raster, _}}</code>.</li></ul><h2 id="coverage-of-ash_storage-s-library-options-under-consideration" class="section-heading"><a href="#coverage-of-ash_storage-s-library-options-under-consideration" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Coverage of ash_storage's &quot;Library options under consideration&quot;</span></h2><table><thead><tr><th style="text-align: left;">Roadmap category (candidate libraries)</th><th style="text-align: left;">Covered?</th><th style="text-align: left;">How</th></tr></thead><tbody><tr><td style="text-align: left;">Image metadata extraction (<code class="inline">ex_image_info</code>, <code class="inline">exexif</code>, <code class="inline">image</code>)</td><td style="text-align: left;">Yes</td><td style="text-align: left;"><code class="inline">Analyzers.Image</code> — dimensions, format, EXIF</td></tr><tr><td style="text-align: left;">File type detection / content sniffing (<code class="inline">gen_magic</code>, <code class="inline">ex_marcel</code>, <code class="inline">magic_number</code>)</td><td style="text-align: left;">Yes</td><td style="text-align: left;"><code class="inline">Analyzers.ContentType</code> — the sidecar's dedicated <code class="inline">POST /detect</code>, or a metadata-only extraction on the NIF</td></tr><tr><td style="text-align: left;">Video/audio metadata (<code class="inline">ffmpex</code>, <code class="inline">xav</code>)</td><td style="text-align: left;">Library yes, stock image no</td><td style="text-align: left;"><code class="inline">Analyzers.Audio</code> is implemented; the stock image has no media support, the <code class="inline">:omni</code> build does</td></tr><tr><td style="text-align: left;">Audio transcription</td><td style="text-align: left;">Library yes, image no</td><td style="text-align: left;"><code class="inline">Variants.Transcript</code> is implemented; requires a media-enabled xberg build</td></tr><tr><td style="text-align: left;">PDF thumbnails (<code class="inline">image</code>/<code class="inline">vix</code> + poppler, <code class="inline">thumbnex</code>)</td><td style="text-align: left;">Yes</td><td style="text-align: left;"><code class="inline">Variants.PageThumbnail</code> — no system dependencies in the app image</td></tr><tr><td style="text-align: left;">Video thumbnails (<code class="inline">ffmpex</code>, <code class="inline">thumbnex</code>)</td><td style="text-align: left;">No</td><td style="text-align: left;">xberg transcribes A/V but does not grab video frames — use <code class="inline">ffmpex</code></td></tr><tr><td style="text-align: left;">Image processing / resize variants (<code class="inline">image</code>+<code class="inline">vix</code>, <code class="inline">mogrify</code>)</td><td style="text-align: left;">No</td><td style="text-align: left;">xberg extracts, it does not resize photos — use <code class="inline">image</code></td></tr><tr><td style="text-align: left;"><strong>Text extraction from ~100 formats</strong></td><td style="text-align: left;">Yes (bonus)</td><td style="text-align: left;"><code class="inline">Analyzers.Text</code> / <code class="inline">Variants.ExtractedText</code> — nothing on the candidate list offers this</td></tr></tbody></table><p>This library composes with <code class="inline">image</code> and <code class="inline">ffmpex</code> rather than replacing them: nothing stops you from
+declaring an <code class="inline">image</code>-based resize variant next to an xberg-based thumbnail on the same attachment.</p>
+
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="readme.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+README
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="changelog.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+Changelog
+        </span>
+      </a>
+
+  </div>
+</div>
+    <footer class="footer">
+
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/ash_storage_xberg/0.1.0">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/ash_storage_xberg/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/ash_storage_xberg/0.1.0/show/guides/sidecar.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="llms.txt" target="_blank">
+                View llms.txt
+              </a>
+
+
+              <a href="AshStorageXberg.epub">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.40.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

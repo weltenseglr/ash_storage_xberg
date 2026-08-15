@@ -173,14 +173,17 @@ bump in lockstep. The `ponytail:` comment at the tag marks this.
 
 ## When editing
 
-- README → also update the analyzer/variant tables if you change options or
-  return keys. They are the source of truth for users.
+- Options or return keys changed → the moduledoc of the affected module is the
+  source of truth for users; update it. The README only lists modules with
+  one-liners — keep those in sync, but no option detail there.
+- Sidecar behaviour changed (image variants, format list, presigned flow,
+  limitations) → update `guides/sidecar.md`, the operational reference.
 - mix.exs `docs/0` `groups_for_modules` → add any new public module to the
-  right group so it doesn't land under "Uncategorized".
+  right group so it doesn't land under "Uncategorized"; new guide files go
+  into `extras`/`groups_for_extras`.
 - CHANGELOG.md `Unreleased` → note any user-visible addition/change/fix.
-- `@moduledoc` and the README overlap intentionally — the README has the
-  installation/compose snippet; moduledocs have per-module detail. Don't try
-  to single-source them.
+- The README stays a quick start: pitch, install, one usage example, links.
+  Deep reference lives in moduledocs and guides — don't grow it back.
 
 ## Useful entry points when investigating
 

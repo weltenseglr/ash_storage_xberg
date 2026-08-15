@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.40.3">
+    <meta name="project" content="AshStorageXberg v0.1.0">
+
+      <meta name="author" content="AshStorageXberg contributors">
+
+
+    <title>README — AshStorageXberg v0.1.0</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
+
+    <script defer src="dist/sidebar_items-0C9D49E2.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-Y2MUTVIN.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+AshStorageXberg
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras="Pages"></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-extra" id="main" data-type="extras">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of AshStorageXberg</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>AshStorageXberg</h1>
+
+<a href="readme.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
+  <i class="ri-markdown-line" aria-hidden="true"></i>
+  <span class="sr-only">Copy Markdown</span>
+</a>
+
+
+      <a href="https://github.com/weltenseglr/ash_storage_xberg/blob/main/README.md#L1" title="View Source" class="icon-action" rel="help nofollow">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+<p><a rel="nofollow" href="https://github.com/ash-project/ash_storage">AshStorage</a> analyzers and variants backed by
+<a rel="nofollow" href="https://github.com/xberg-io/xberg">xberg</a>, a document-intelligence engine that runs as a REST
+sidecar container (or, interchangeably, as the in-process NIF).</p><p>Attach a file to an Ash resource and get, without adding a single native dependency to your app:</p><ul><li><strong>Text extraction from ~100 formats</strong> — PDF, Office (OOXML and legacy), ODF, HTML, email,
+archives, LaTeX, notebooks, source code, and images via OCR</li><li><strong>Document metadata</strong> — title, authors, page count, creation date, detected language</li><li><strong>Image metadata</strong> — dimensions, format, EXIF</li><li><strong>MIME sniffing</strong> — the real content type of an upload, independent of what the client claimed</li><li><strong>Page thumbnails</strong> — first-page (or n-th page) rasters of PDFs, written as a stored variant</li><li><strong>Full-text sidecar files</strong> and (on media-enabled sidecar builds) <strong>Whisper transcripts</strong></li></ul><h2 id="architecture" class="section-heading"><a href="#architecture" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Architecture</span></h2><p>The heavy lifting — Rust parsers, Tesseract OCR, ONNX models — lives in its own container. The
+BEAM application stays pure Elixir and talks to it over HTTP:</p><pre><code class="makeup elixir" translate="no"><span class="err">┌</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┐</span><span class="w">        </span><span class="n">multipart</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">JSON</span><span class="w">        </span><span class="err">┌</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┐</span><span class="w">
+</span><span class="err">│</span><span class="w">  </span><span class="n">your</span><span class="w"> </span><span class="nc">Ash</span><span class="w"> </span><span class="n">app</span><span class="w">        </span><span class="err">│</span><span class="w">  </span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">▶</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="n">xberg</span><span class="w"> </span><span class="n">sidecar</span><span class="w">       </span><span class="err">│</span><span class="w">
+</span><span class="err">│</span><span class="w">  </span><span class="n">ash_storage</span><span class="w">         </span><span class="err">│</span><span class="w">                                </span><span class="err">│</span><span class="w">  </span><span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">xberg</span><span class="o">-</span><span class="n">io</span><span class="o">/</span><span class="err">…</span><span class="w">  </span><span class="err">│</span><span class="w">
+</span><span class="err">│</span><span class="w">  </span><span class="n">ash_storage_xberg</span><span class="w">   </span><span class="err">│</span><span class="w">  </span><span class="err">◀</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">`</span><span class="n">xberg</span><span class="w"> </span><span class="n">serve</span><span class="err">`</span><span class="w">       </span><span class="err">│</span><span class="w">
+</span><span class="err">└</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┘</span><span class="w">        </span><span class="nc">ExtractionResult</span><span class="w">        </span><span class="err">└</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┘</span><span class="w">
+          </span><span class="err">│</span><span class="w">                                                        </span><span class="err">▲</span><span class="w">
+          </span><span class="err">│</span><span class="w">  </span><span class="n">presigned</span><span class="w"> </span><span class="nc">URL</span><span class="w">                                         </span><span class="err">│</span><span class="w">
+          </span><span class="err">▼</span><span class="w">                                                        </span><span class="err">│</span><span class="w">
+</span><span class="err">┌</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┐</span><span class="w">   </span><span class="n">the</span><span class="w"> </span><span class="n">sidecar</span><span class="w"> </span><span class="n">downloads</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blob</span><span class="w"> </span><span class="n">itself</span><span class="w">   </span><span class="err">│</span><span class="w">
+</span><span class="err">│</span><span class="w">  </span><span class="nc">S3</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">Azure</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">disk</span><span class="w">   </span><span class="err">│</span><span class="w"> </span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┘</span><span class="w">
+</span><span class="err">└</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">─</span><span class="err">┘</span></code></pre><p>The sidecar runs isolated and can be scaled, resource-limited, and upgraded independently of the app; the same
+two-container shape works in dev, CI, and production. <a href="AshStorageXberg.Xberg.html"><code class="inline">AshStorageXberg.Xberg</code></a> mirrors the API of
+the <a href="https://hexdocs.pm/xberg/1.0.14/Xberg.html"><code class="inline">Xberg</code></a> NIF module from the <code class="inline">:xberg</code> hex package, so the REST client (the default) and the
+in-process NIF are exchangeable without touching any call site:</p><pre><code class="makeup elixir" translate="no"><span class="c1"># REST sidecar (default) — no native dependencies</span><span class="w">
+</span><span class="n">config</span><span class="w"> </span><span class="ss">:ash_storage_xberg</span><span class="p">,</span><span class="w"> </span><span class="ss">xberg</span><span class="p">:</span><span class="w"> </span><span class="nc">AshStorageXberg.XbergApi</span><span class="w">
+
+</span><span class="c1"># in-process NIF — add {:xberg, &quot;~&gt; 1.0&quot;} to your deps</span><span class="w">
+</span><span class="n">config</span><span class="w"> </span><span class="ss">:ash_storage_xberg</span><span class="p">,</span><span class="w"> </span><span class="ss">xberg</span><span class="p">:</span><span class="w"> </span><span class="nc">Xberg</span></code></pre><h2 id="installation" class="section-heading"><a href="#installation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Installation</span></h2><p><code class="inline">ash_storage</code> is not published on hex.pm yet, so it must be a git dependency:</p><pre><code class="makeup elixir" translate="no"><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="2376442214-1">do</span><span class="w">
+  </span><span class="p" data-group-id="2376442214-2">[</span><span class="w">
+    </span><span class="p" data-group-id="2376442214-3">{</span><span class="ss">:ash_storage</span><span class="p">,</span><span class="w"> </span><span class="ss">github</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ash-project/ash_storage&quot;</span><span class="p" data-group-id="2376442214-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2376442214-4">{</span><span class="ss">:ash_storage_xberg</span><span class="p">,</span><span class="w"> </span><span class="ss">github</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;weltenseglr/ash_storage_xberg&quot;</span><span class="p" data-group-id="2376442214-4">}</span><span class="w">
+  </span><span class="p" data-group-id="2376442214-2">]</span><span class="w">
+</span><span class="k" data-group-id="2376442214-1">end</span></code></pre><p>Run <code class="inline">ghcr.io/xberg-io/xberg</code> next to your app (its default command is already
+<code class="inline">serve -H 0.0.0.0 -p 8000</code>):</p><pre><code class="yaml"># docker-compose.yml
+services:
+  app:
+    image: hexpm/elixir:1.18.4-erlang-27.3.4-debian-trixie-20250630-slim
+    environment:
+      XBERG_URL: http://xberg:8000
+    depends_on:
+      xberg:
+        condition: service_healthy
+
+  xberg:
+    image: ghcr.io/xberg-io/xberg:latest
+    environment:
+      XBERG_MAX_MULTIPART_FIELD_BYTES: &quot;209715200&quot;
+      XBERG_MAX_REQUEST_BODY_BYTES: &quot;209715200&quot;
+    volumes:
+      # OCR/Whisper models and the extraction cache survive rebuilds
+      - xberg-cache:/app/.xberg
+    ports:
+      - &quot;8000:8000&quot;
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;xberg&quot;, &quot;--version&quot;]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  xberg-cache:</code></pre><pre><code class="makeup elixir" translate="no"><span class="n">config</span><span class="w"> </span><span class="ss">:ash_storage_xberg</span><span class="p">,</span><span class="w">
+  </span><span class="ss">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://localhost:8000&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># defaults to $XBERG_URL, then http://localhost:8000</span><span class="w">
+  </span><span class="ss">receive_timeout</span><span class="p">:</span><span class="w"> </span><span class="mi">120_000</span><span class="p">,</span><span class="w">
+  </span><span class="ss">req_options</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1339281982-1">[</span><span class="p" data-group-id="1339281982-1">]</span><span class="w">                     </span><span class="c1"># merged into every Req request</span></code></pre><p><code class="inline">XBERG_URL</code> is the usual knob: <code class="inline">http://xberg:8000</code> in compose, <code class="inline">http://localhost:8000</code> when the
+sidecar's port is published locally. The stock image has no audio/media or office-rasterization
+support — the <a href="sidecar.html">sidecar guide</a> covers image variants, model warming, and the
+limitations of current builds.</p><h2 id="usage" class="section-heading"><a href="#usage" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Usage</span></h2><p>Analyzers and variants are declared inside <code class="inline">has_one_attached</code> / <code class="inline">has_many_attached</code> blocks of
+ash_storage's <code class="inline">storage</code> section:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.Document</span><span class="w"> </span><span class="k" data-group-id="4692386825-1">do</span><span class="w">
+  </span><span class="kn">use</span><span class="w"> </span><span class="nc">Ash.Resource</span><span class="p">,</span><span class="w">
+    </span><span class="ss">domain</span><span class="p">:</span><span class="w"> </span><span class="nc">MyApp.Domain</span><span class="p">,</span><span class="w">
+    </span><span class="ss">data_layer</span><span class="p">:</span><span class="w"> </span><span class="nc">AshPostgres.DataLayer</span><span class="p">,</span><span class="w">
+    </span><span class="ss">extensions</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4692386825-2">[</span><span class="nc">AshStorage</span><span class="p" data-group-id="4692386825-2">]</span><span class="w">
+
+  </span><span class="n">postgres</span><span class="w"> </span><span class="k" data-group-id="4692386825-3">do</span><span class="w">
+    </span><span class="n">table</span><span class="w"> </span><span class="s">&quot;documents&quot;</span><span class="w">
+    </span><span class="n">repo</span><span class="w"> </span><span class="nc">MyApp.Repo</span><span class="w">
+  </span><span class="k" data-group-id="4692386825-3">end</span><span class="w">
+
+  </span><span class="n">storage</span><span class="w"> </span><span class="k" data-group-id="4692386825-4">do</span><span class="w">
+    </span><span class="n">service</span><span class="w"> </span><span class="p" data-group-id="4692386825-5">{</span><span class="nc">AshStorage.Service.Disk</span><span class="p">,</span><span class="w"> </span><span class="ss">root</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;priv/storage&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/storage&quot;</span><span class="p" data-group-id="4692386825-5">}</span><span class="w">
+
+    </span><span class="n">blob_resource</span><span class="w"> </span><span class="nc">MyApp.StorageBlob</span><span class="w">
+    </span><span class="n">attachment_resource</span><span class="w"> </span><span class="nc">MyApp.StorageAttachment</span><span class="w">
+
+    </span><span class="n">has_many_attached</span><span class="w"> </span><span class="ss">:files</span><span class="w"> </span><span class="k" data-group-id="4692386825-6">do</span><span class="w">
+      </span><span class="c1"># cheap: a MIME sniff, no extraction — fine to run eagerly on every upload</span><span class="w">
+      </span><span class="n">analyzer</span><span class="w"> </span><span class="nc">AshStorageXberg.Analyzers.ContentType</span><span class="w">
+
+      </span><span class="c1"># bibliographic metadata from the document header</span><span class="w">
+      </span><span class="n">analyzer</span><span class="w"> </span><span class="nc">AshStorageXberg.Analyzers.Document</span><span class="w">
+
+      </span><span class="c1"># full text extraction is the expensive one — push it to the background;</span><span class="w">
+      </span><span class="c1"># write_attributes copies the &quot;text&quot; result onto the parent record</span><span class="w">
+      </span><span class="n">analyzer</span><span class="w"> </span><span class="p" data-group-id="4692386825-7">{</span><span class="nc">AshStorageXberg.Analyzers.Text</span><span class="p">,</span><span class="w"> </span><span class="ss">output</span><span class="p">:</span><span class="w"> </span><span class="ss">:markdown</span><span class="p">,</span><span class="w"> </span><span class="ss">max_bytes</span><span class="p">:</span><span class="w"> </span><span class="mi">65_536</span><span class="p" data-group-id="4692386825-7">}</span><span class="p">,</span><span class="w">
+        </span><span class="ss">analyze</span><span class="p">:</span><span class="w"> </span><span class="ss">:oban</span><span class="p">,</span><span class="w">
+        </span><span class="ss">write_attributes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4692386825-8">[</span><span class="ss">text</span><span class="p">:</span><span class="w"> </span><span class="ss">:extracted_text</span><span class="p" data-group-id="4692386825-8">]</span><span class="w">
+
+      </span><span class="c1"># a first-page thumbnail, generated when its URL calculation is first loaded</span><span class="w">
+      </span><span class="n">variant</span><span class="w"> </span><span class="ss">:thumbnail</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4692386825-9">{</span><span class="nc">AshStorageXberg.Variants.PageThumbnail</span><span class="p">,</span><span class="w"> </span><span class="ss">format</span><span class="p">:</span><span class="w"> </span><span class="ss">:webp</span><span class="p" data-group-id="4692386825-9">}</span><span class="w">
+
+      </span><span class="c1"># the full text as a stored .md file, for documents too big for blob metadata</span><span class="w">
+      </span><span class="n">variant</span><span class="w"> </span><span class="ss">:fulltext</span><span class="p">,</span><span class="w"> </span><span class="nc">AshStorageXberg.Variants.ExtractedText</span><span class="p">,</span><span class="w"> </span><span class="ss">generate</span><span class="p">:</span><span class="w"> </span><span class="ss">:oban</span><span class="w">
+    </span><span class="k" data-group-id="4692386825-6">end</span><span class="w">
+  </span><span class="k" data-group-id="4692386825-4">end</span><span class="w">
+
+  </span><span class="n">attributes</span><span class="w"> </span><span class="k" data-group-id="4692386825-10">do</span><span class="w">
+    </span><span class="n">uuid_primary_key</span><span class="w"> </span><span class="ss">:id</span><span class="w">
+    </span><span class="n">attribute</span><span class="w"> </span><span class="ss">:title</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">public?</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+    </span><span class="n">attribute</span><span class="w"> </span><span class="ss">:extracted_text</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="w">
+  </span><span class="k" data-group-id="4692386825-10">end</span><span class="w">
+
+  </span><span class="n">actions</span><span class="w"> </span><span class="k" data-group-id="4692386825-11">do</span><span class="w">
+    </span><span class="n">defaults</span><span class="w"> </span><span class="p" data-group-id="4692386825-12">[</span><span class="ss">:read</span><span class="p">,</span><span class="w"> </span><span class="ss">:destroy</span><span class="p">,</span><span class="w"> </span><span class="ss">create</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4692386825-13">[</span><span class="ss">:title</span><span class="p" data-group-id="4692386825-13">]</span><span class="p">,</span><span class="w"> </span><span class="ss">update</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4692386825-14">[</span><span class="ss">:title</span><span class="p" data-group-id="4692386825-14">]</span><span class="p" data-group-id="4692386825-12">]</span><span class="w">
+  </span><span class="k" data-group-id="4692386825-11">end</span><span class="w">
+</span><span class="k" data-group-id="4692386825-1">end</span></code></pre><p>DSL notes, verified against ash_storage:</p><ul><li><code class="inline">analyzer</code> takes <strong>one</strong> positional argument — a module or a <code class="inline">{module, opts}</code> tuple — plus the
+options <code class="inline">analyze: :eager | :oban</code> (default <code class="inline">:eager</code>) and <code class="inline">write_attributes:</code>. There is no
+<code class="inline">analyzer :name, Module</code> form.</li><li><code class="inline">variant</code> takes <strong>two</strong> positional arguments — the variant name and a module or <code class="inline">{module, opts}</code>
+tuple — plus <code class="inline">generate: :on_demand | :eager | :oban</code> (default <code class="inline">:on_demand</code>).</li><li>The <code class="inline">opts</code> in the tuple are what reach <code class="inline">analyze/2</code> and <code class="inline">transform/3</code>; the trailing keyword
+options are consumed by ash_storage itself.</li><li>Each variant adds a URL calculation: <code class="inline">:files_thumbnail_urls</code> (has_many) or
+<code class="inline">:cover_preview_url</code> (has_one).</li><li><code class="inline">analyze: :oban</code> / <code class="inline">generate: :oban</code> require AshOban triggers named <code class="inline">:run_pending_analyzers</code> /
+<code class="inline">:run_pending_variants</code> on your blob resource — ash_storage has compile-time verifiers that tell
+you exactly what to add.</li></ul><p>Reading the results:</p><pre><code class="makeup elixir" translate="no"><span class="n">document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Ash</span><span class="o">.</span><span class="n">load!</span><span class="p" data-group-id="9639794543-1">(</span><span class="n">document</span><span class="p">,</span><span class="w"> </span><span class="ss">files</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9639794543-2">[</span><span class="ss">blob</span><span class="p">:</span><span class="w"> </span><span class="ss">:variants</span><span class="p" data-group-id="9639794543-2">]</span><span class="p" data-group-id="9639794543-1">)</span><span class="w">
+
+</span><span class="n">hd</span><span class="p" data-group-id="9639794543-3">(</span><span class="n">document</span><span class="o">.</span><span class="n">files</span><span class="p" data-group-id="9639794543-3">)</span><span class="o">.</span><span class="n">blob</span><span class="o">.</span><span class="n">metadata</span><span class="w">
+</span><span class="c1">#=&gt; %{</span><span class="w">
+</span><span class="c1">#     &quot;detected_content_type&quot; =&gt; &quot;application/pdf&quot;,</span><span class="w">
+</span><span class="c1">#     &quot;title&quot; =&gt; &quot;Q3 Report&quot;, &quot;authors&quot; =&gt; [&quot;Jane Doe&quot;], &quot;page_count&quot; =&gt; 12,</span><span class="w">
+</span><span class="c1">#     &quot;language&quot; =&gt; &quot;eng&quot;, &quot;text&quot; =&gt; &quot;…&quot;, &quot;word_count&quot; =&gt; 4213, &quot;ocr_used&quot; =&gt; false</span><span class="w">
+</span><span class="c1">#   }</span></code></pre><p>Analyzer results are string-keyed on purpose: ash_storage resolves <code class="inline">write_attributes</code> with
+<code class="inline">Map.fetch(result, to_string(key))</code>, and string keys are also what <code class="inline">blob.metadata</code> contains after
+a database round-trip.</p><h2 id="analyzers-and-variants" class="section-heading"><a href="#analyzers-and-variants" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Analyzers and variants</span></h2><p>Accepted content types, returned keys, and options are documented per module — the moduledocs are
+the reference:</p><ul><li><a href="AshStorageXberg.Analyzers.ContentType.html"><code class="inline">AshStorageXberg.Analyzers.ContentType</code></a> — MIME sniffing via the sidecar's <code class="inline">POST /detect</code></li><li><a href="AshStorageXberg.Analyzers.Document.html"><code class="inline">AshStorageXberg.Analyzers.Document</code></a> — title, authors, page count, language, creation date</li><li><a href="AshStorageXberg.Analyzers.Image.html"><code class="inline">AshStorageXberg.Analyzers.Image</code></a> — dimensions, format, EXIF</li><li><a href="AshStorageXberg.Analyzers.Audio.html"><code class="inline">AshStorageXberg.Analyzers.Audio</code></a> — duration, codec, sample rate, channels, bitrate</li><li><a href="AshStorageXberg.Analyzers.Text.html"><code class="inline">AshStorageXberg.Analyzers.Text</code></a> — extracted text, language, word count, OCR flag</li><li><a href="AshStorageXberg.Variants.PageThumbnail.html"><code class="inline">AshStorageXberg.Variants.PageThumbnail</code></a> — a rasterized document page</li><li><a href="AshStorageXberg.Variants.ExtractedText.html"><code class="inline">AshStorageXberg.Variants.ExtractedText</code></a> — full text as a stored <code class="inline">.md</code>/<code class="inline">.txt</code>/<code class="inline">.json</code> file</li><li><a href="AshStorageXberg.Variants.Transcript.html"><code class="inline">AshStorageXberg.Variants.Transcript</code></a> — Whisper transcript of audio/video</li></ul><h2 id="going-deeper" class="section-heading"><a href="#going-deeper" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Going deeper</span></h2><ul><li><strong><a href="sidecar.html">The xberg sidecar</a></strong> — choosing an image, the runtime format allowlist,
+the presigned-URL flow (bytes never enter the BEAM), SSRF policy, and the limitations of
+current sidecar builds.</li><li><strong><a href="https://hexdocs.pm/ex_doc/0.40.3/Mix.Tasks.Docs.html"><code class="inline">mix docs</code></a></strong> builds the full documentation site (HTML, EPUB, and a <code class="inline">doc/llms.txt</code> snapshot
+for LLM context), with the README as landing page and modules grouped under <em>Analyzers</em>,
+<em>Variants</em>, and <em>Xberg client</em>.</li></ul><h2 id="testing" class="section-heading"><a href="#testing" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Testing</span></h2><pre><code class="makeup bash" translate="no"><span class="">mix test                                                        # unit tests, HTTP stubbed
+</span><span class="">XBERG_URL=http://127.0.0.1:8000 mix test --include integration  # live sidecar round-trips
+</span><span class="">XBERG_URL=http://127.0.0.1:8000 mix test --include transcript   # Whisper (media build + model)
+</span></code></pre><p>Bring a sidecar up with <code class="inline">podman run --rm -p 8000:8000 ghcr.io/xberg-io/xberg:latest</code>. Use
+<code class="inline">127.0.0.1</code>, not <code class="inline">localhost</code>: a rootless podman published port binds IPv4 only, while <code class="inline">localhost</code>
+often resolves to <code class="inline">::1</code> first. CI (<code class="inline">.github/workflows/test.yml</code>) runs the same tiers against a
+sidecar service container.</p><h2 id="license" class="section-heading"><a href="#license" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">License</span></h2><p>MIT.</p>
+
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="sidecar.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+The xberg sidecar
+        </span>
+      </a>
+
+  </div>
+</div>
+    <footer class="footer">
+
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/ash_storage_xberg/0.1.0">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/ash_storage_xberg/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/ash_storage_xberg/0.1.0/show/README.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="llms.txt" target="_blank">
+                View llms.txt
+              </a>
+
+
+              <a href="AshStorageXberg.epub">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.40.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

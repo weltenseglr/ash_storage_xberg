@@ -1,0 +1,47 @@
+# AshStorageXberg v0.1.0 - Table of Contents
+
+> AshStorage analyzers and variants backed by the xberg document intelligence sidecar
+
+## Pages
+
+- Guides
+  - [README](readme.md)
+  - [The xberg sidecar](sidecar.md)
+
+- Reference
+  - [Changelog](changelog.md)
+  - [License](license.md)
+
+## Modules
+
+- [AshStorageXberg](AshStorageXberg.md): AshStorage analyzers and variants backed by the
+[xberg](https://github.com/xberg-io/xberg) document intelligence engine.
+
+- Analyzers
+  - [AshStorageXberg.Analyzers.Audio](AshStorageXberg.Analyzers.Audio.md): Technical metadata of audio and video files.
+  - [AshStorageXberg.Analyzers.ContentType](AshStorageXberg.Analyzers.ContentType.md): Sniffs the real MIME type of an upload via the sidecar's dedicated
+`POST /detect` endpoint — no extraction, so this is cheap enough to run
+eagerly on every attachment.
+  - [AshStorageXberg.Analyzers.Document](AshStorageXberg.Analyzers.Document.md): Bibliographic metadata of documents: PDF, Office (OOXML and legacy), ODF, RTF,
+and EPUB.
+  - [AshStorageXberg.Analyzers.Image](AshStorageXberg.Analyzers.Image.md): Image dimensions, format, and EXIF tags.
+  - [AshStorageXberg.Analyzers.Text](AshStorageXberg.Analyzers.Text.md): Extracted text of any format the sidecar supports — the headline feature:
+PDF, Office/ODF, HTML, email, archives, notebooks, source code, and (with
+`ocr: true`) images.
+
+- Variants
+  - [AshStorageXberg.Variants.ExtractedText](AshStorageXberg.Variants.ExtractedText.md): `AshStorage.Variant` that stores the full extracted text of a document as a
+sidecar file — the right home for text too large for the blob metadata map
+(see `AshStorageXberg.Analyzers.Text` and its `:max_bytes` cap).
+  - [AshStorageXberg.Variants.PageThumbnail](AshStorageXberg.Variants.PageThumbnail.md): `AshStorage.Variant` that renders a page of a document to an image, using the
+xberg sidecar's page rasterization.
+  - [AshStorageXberg.Variants.Transcript](AshStorageXberg.Variants.Transcript.md): `AshStorage.Variant` that stores the Whisper transcript of an audio or video
+file, produced by the xberg sidecar.
+
+- Xberg client
+  - [AshStorageXberg.Formats](AshStorageXberg.Formats.md): Supported-format lookup for `accept?/1` callbacks, backed by the sidecar's
+`GET /formats` endpoint.
+  - [AshStorageXberg.Xberg](AshStorageXberg.Xberg.md): The exchangeable xberg interface.
+  - [AshStorageXberg.XbergApi](AshStorageXberg.XbergApi.md): REST implementation of `AshStorageXberg.Xberg`, backed by an xberg sidecar
+(`ghcr.io/xberg-io/xberg`, `xberg serve`).
+

@@ -1,8 +1,8 @@
 # ignore list from https://github.com/github/gitignore/blob/main/Elixir.gitignore
+# (minus /doc — generated docs are tracked and shipped on purpose)
 /_build
 /cover
 /deps
-/doc
 /.fetch
 erl_crash.dump
 *.ez
