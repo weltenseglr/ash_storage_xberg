@@ -1,0 +1,79 @@
+name: Test
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Elixir ${{ matrix.elixir }} / ${{ matrix.backend }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.backend == 'nif' }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        elixir: ["1.15", "1.18"]
+        backend: [rest, nif]
+
+    services:
+      xberg:
+        image: ghcr.io/weltenseglr/xberg:omni
+        ports:
+          - 8000:8000
+        options: >-
+          --health-cmd "xberg --version"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 12
+        env:
+          XBERG_MAX_MULTIPART_FIELD_BYTES: "209715200"
+          XBERG_MAX_REQUEST_BODY_BYTES: "209715200"
+
+    env:
+      MIX_ENV: test
+      XBERG_URL: http://127.0.0.1:8000
+      XBERG_BACKEND: ${{ matrix.backend }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Erlang/OTP
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27.3.4"
+          elixir-version: ${{ matrix.elixir }}
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ matrix.elixir }}-${{ matrix.backend }}-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-${{ matrix.elixir }}-${{ matrix.backend }}-
+            ${{ runner.os }}-mix-${{ matrix.elixir }}-
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Install optional NIF dependency when backend is nif
+        if: ${{ matrix.backend == 'nif' }}
+        run: mix deps.get xberg
+
+      - name: Compile
+        run: mix compile
+
+      - name: Run test suite
+        run: mix test
+
+      - name: Run docs build
+        if: ${{ matrix.backend == 'rest' && matrix.elixir == '1.18' }}
+        run: mix docs

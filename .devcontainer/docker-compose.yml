@@ -1,0 +1,31 @@
+services:
+  app:
+    image: hexpm/elixir:1.18.4-erlang-27.3.4.16-debian-trixie-20260803-slim
+    command: sleep infinity
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+    environment:
+      XBERG_URL: http://xberg:8000
+      XBERG_CACHE_DIR: /workspace/.xberg
+      HF_HOME: /workspace/.xberg/huggingface
+    depends_on:
+      xberg:
+        condition: service_healthy
+
+  xberg:
+    image: ghcr.io/weltenseglr/xberg:omni
+    # image default: serve -H 0.0.0.0 -p 8000
+    user: "0:0"
+    environment:
+      XBERG_MAX_MULTIPART_FIELD_BYTES: "209715200"
+      XBERG_MAX_REQUEST_BODY_BYTES: "209715200"
+    volumes:
+      - ../.xberg:/app/.xberg
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "xberg", "--version"]
+      interval: 5s
+      timeout: 5s
+      retries: 12

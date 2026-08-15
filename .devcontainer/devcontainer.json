@@ -1,0 +1,13 @@
+{
+  "name": "ash_storage_xberg",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8000],
+  "postCreateCommand": "apt-get update && apt-get install -y --no-install-recommends git inotify-tools ca-certificates && mix local.hex --force && mix local.rebar --force && mix deps.get && mix run -e '{:ok, _} = AshStorageXberg.XbergApi.cache_warm()'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["JakeBecker.elixir-ls"]
+    }
+  }
+}
